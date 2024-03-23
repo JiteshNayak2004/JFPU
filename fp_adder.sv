@@ -1,3 +1,7 @@
+
+
+`include "add_normaliser.sv"
+
 module adder(a,b,out);
 // port declarations
 input logic [31:0]a;
@@ -37,7 +41,14 @@ logic [7:0] tmp_exponent;
 assign a_sign=a[31];
 assign b_sign=b[31];
 
-
+// intializing add_normalizer
+  addition_normaliser norm
+  (
+    .in_e(i_e),
+    .in_m(i_m),
+    .out_e(o_e),
+    .out_m(o_m)
+  );
 
 // adding the implicit bit for normalized and denormalized floating point no's
 // 0 for denormalized
@@ -127,8 +138,11 @@ always @(*) begin
     //checks whether the implicit bit is 0 and exponent non zero this would indicate a non normalized no
     // if exponent was 0 then it would be denormalized no which is ok
     if((out_mantissa[23]!=1)&&(out_exponent!=0)) begin
+      i_e = out_exponent;
+      i_m = out_mantissa;
+      out_exponent = o_e;
+      out_mantissa = o_m;
 
-        
     end
 end
 
