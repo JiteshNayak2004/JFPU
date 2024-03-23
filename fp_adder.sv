@@ -26,6 +26,12 @@ logic [7:0] diff;
 logic [23:0] tmp_mantissa;
 logic [7:0] tmp_exponent;
 
+// dummy vars to convert o/p mantissa into 1.Mantissa format using add_normalizer
+  logic [7:0] i_e;
+  logic [24:0] i_m;
+  logic [7:0] o_e;
+  logic [24:0] o_m;
+
 //basic assigning
 
 assign a_sign=a[31];
@@ -118,7 +124,10 @@ always @(*) begin
 
     end
     // handling underflow complete it later
-    if((out_mantissa[23]!=1)&&(out_exponent==0)) begin
+    //checks whether the implicit bit is 0 and exponent non zero this would indicate a non normalized no
+    // if exponent was 0 then it would be denormalized no which is ok
+    if((out_mantissa[23]!=1)&&(out_exponent!=0)) begin
+
         
     end
 end
