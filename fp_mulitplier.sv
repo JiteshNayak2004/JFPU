@@ -1,3 +1,6 @@
+// write multiplier normalizer function
+
+
 module multiplier (a,b,out);
 // port declarations
 input logic [31:0]a;
@@ -91,9 +94,6 @@ always@(*) begin
     // final out we ignore implicit bit
     out={out_sign,out_exponent,out_mantissa[22:0]};
     
-
-
-
 
 end
 
