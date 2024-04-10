@@ -33,7 +33,8 @@ endmodule
 
 
 
-// approach 2 using if stmts
+// approach 2 using if stmts in case of synthesis issues!
+
 
 // module addition_normaliser(in_e, in_m, out_e, out_m);
 //   input logic [7:0] in_e;  
