@@ -1,5 +1,4 @@
-// write multiplier normalizer function
-
+`include "multiplier_normalizer.sv"
 
 module multiplier (a,b,out);
 // port declarations
@@ -39,6 +38,16 @@ logic [47:0]product; // product is 48 bits as each i/p mantissa is 24 bit wide i
 assign a_sign=a[31];
 assign b_sign=b[31];
 
+
+
+// intializing multiplier_normalizer
+  multiplication_normaliser norm
+  (
+    .in_e(i_e),
+    .in_m(i_m),
+    .out_e(o_e),
+    .out_m(o_m)
+  );
 
 always@(*) begin
 
