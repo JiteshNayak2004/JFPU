@@ -1,4 +1,7 @@
 
+`include "fp_adder.sv"
+`include "fp_multiplier.sv"
+
 
 // using newton raphson method for division
 
@@ -54,7 +57,7 @@ logic [31:0] x0; // initial seed
 logic [31:0] x1; 
 logic [31:0] x2;
 logic [31:0] x3;  
-always @(*) begin
+always_comb begin
     // assigning sign 
     assign out_sign=a_sign^b_sign;
 
@@ -111,7 +114,7 @@ always @(*) begin
         .a(x0),
         .b(intermediate_op2),
         .out(x1)
-    ) // x1=x0*(2-D*x0)
+    ); // x1=x0*(2-D*x0)
 
     
     
@@ -139,7 +142,7 @@ always @(*) begin
         .a(x1),
         .b(intermediate_op4),
         .out(x2)
-    ) // x2=x1*(2-D*x1)
+    ); // x2=x1*(2-D*x1)
 
     
     
