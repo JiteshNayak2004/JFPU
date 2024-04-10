@@ -144,9 +144,7 @@ always @(*) begin
     
     
     
-    
-    
-    
+
     
     // iteration 3
 
@@ -175,9 +173,6 @@ always @(*) begin
 
 end
     
-
-
-
 
 
 
