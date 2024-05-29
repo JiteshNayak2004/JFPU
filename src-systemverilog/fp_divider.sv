@@ -97,20 +97,20 @@ always_comb begin
 
     // iteration 1
 
-    multiplier m1 (
+    fp_multiplier m1 (
         .a(d),
         .b(x0),
         .out(intermediate_op1)
     );
 
-    adder a1 (
+    fp_adder a1 (
         .a(C3),
         .b(-intermediate_op1),
         .out(intermediate_op2)
     ); // 2-D*x0
 
 
-    multiplier m2 (
+    fp_multiplier m2 (
         .a(x0),
         .b(intermediate_op2),
         .out(x1)
@@ -125,20 +125,20 @@ always_comb begin
     
     // iteration 2
 
-    multiplier m3 (
+    fp_multiplier m3 (
         .a(d),
         .b(x1),
         .out(intermediate_op3)
     ); // d*x1
 
-    adder a2 (
+    fp_adder a2 (
         .a(C3),
         .b(-intermediate_op3),
         .out(intermediate_op4)
     ); // 2-D*x1
 
 
-    multiplier m4 (
+    fp_multiplier m4 (
         .a(x1),
         .b(intermediate_op4),
         .out(x2)
@@ -151,20 +151,20 @@ always_comb begin
     
     // iteration 3
 
-    multiplier m5 (
+    fp_multiplier m5 (
         .a(d),
         .b(x2),
         .out(intermediate_op5)
     ); // D*x2
 
-    adder a3 (
+    fp_adder a3 (
         .a(C3),
         .b(-intermediate_op5),
         .out(intermediate_op6)
     ); // 2-D*x0
 
 
-    multiplier m6 (
+    fp_multiplier m6 (
         .a(x2),
         .b(intermediate_op6),
         .out(x3)

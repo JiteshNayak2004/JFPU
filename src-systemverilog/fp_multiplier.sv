@@ -1,6 +1,5 @@
-`include "/home/jitesh/Desktop/JFPU/src-systemverilog/multiplier_normalizer.sv"
 
-module multiplier (a,b,out);
+module fp_multiplier (a,b,out);
 // port declarations
 input logic [31:0]a;
 input logic [31:0]b;
@@ -28,10 +27,11 @@ logic [23:0]out_mantissa;
 logic [47:0]product; // product is 48 bits as each i/p mantissa is 24 bit wide including implicit bit
 
 // dummy vars to convert o/p mantissa into 1.Mantissa format using add_normalizer
-  logic [7:0] i_e;
-  logic [47:0] i_m;
-  logic [7:0] o_e;
-  logic [47:0] o_m;
+logic [7:0] norm_out_exponent;
+logic [47:0] norm_product; 
+integer i;
+logic[63:0] binary_i; // sformatf returns a 64 bit value
+logic[7:0] binary_eq; // slicing binary_i to contain 8 bits so as to subtract 
 
 //basic assigning
 
@@ -39,15 +39,6 @@ assign a_sign=a[31];
 assign b_sign=b[31];
 
 
-
-// intializing multiplier_normalizer
-  multiplier_normalizer norm
-  (
-    .in_e(i_e),
-    .in_m(i_m),
-    .out_e(o_e),
-    .out_m(o_m)
-  );
 
 always@(*) begin
 
@@ -85,7 +76,7 @@ always@(*) begin
     // 47th bit is the implicit check bit
     // 46:23 are the 24 bits
 
-    // implicit bit is 1 so store off the 24 bits
+    // implicit bit is 1 so store off the 24 bits as already normalized
     if (product[47]==1) begin
         out_mantissa=product[47:24]; // we are storing implicit bit also in mantissa
     end
@@ -93,10 +84,12 @@ always@(*) begin
     //If product[47](implicit bit) is 0 and o_exponent is non zero 
     //(indicates a non-zero value but not normalized)
     else if ((product[47] != 1) && (out_exponent != 0)) begin
-      i_e = out_exponent;
-      i_m = product;
-      out_exponent = o_e;
-      product = o_m;
+      if(product[47-i]==1'b1) begin
+        norm_product=product<<i;
+        binary_i=$sformatf("%0d", i);
+        binary_eq=binary_i[7:0];
+        norm_out_exponent=out_exponent-binary_eq;
+      end
     end
     out_mantissa=product[47:24];
 
