@@ -1,38 +1,3 @@
-
-// approach 1 using for loop
-
-module addition_normaliser(in_e, in_m, out_e, out_m);
-  input logic [7:0] in_e;  
-  input logic [23:0] in_m; // as overflow is checked and corrected before we don't need 24th bit
-  output logic [23:0] out_m;
-  output logic [7:0] out_e;
-
-  integer i;
-  logic[63:0] binary_i; // sformatf returns a 64 bit value
-  logic[7:0] binary_eq; // slicing binary_i to contain 8 bits so as to subtract   
-
-  always_comb begin 
-    
-    for (i = 0 ;i<48 ;i++ ) begin
-
-        if (in_m[i]==1'b1) begin
-
-            out_m=in_m<<i;
-            binary_i=$sformatf("%0d", i);
-            binary_eq=binary_i[7:0];
-            out_e=in_e-binary_eq;
-
-        end
-        
-    end
-    
-  end
-
-endmodule
-
-
-
-
 // approach 2 using if stmts in case of synthesis issues!
 
 

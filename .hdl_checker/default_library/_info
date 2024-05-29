@@ -1,0 +1,191 @@
+m255
+K4
+z2
+!s11f vlog 2021.2_1 2021.05, May 15 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/jitesh/Desktop/JFPU
+vadder
+Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z2 !s110 1716734414
+!i10b 1
+!s100 6MklI8Lc<gY?kiFL6P_3D0
+IiUXn^gZQzk^`XCU010YAf2
+S1
+R0
+Z3 w1716734366
+8/home/jitesh/Desktop/JFPU/src-systemverilog//fp_adder.sv
+F/home/jitesh/Desktop/JFPU/src-systemverilog//fp_adder.sv
+!i122 10
+L0 3 151
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.2_1;73
+r1
+!s85 0
+31
+Z6 !s108 1716734414.000000
+!s107 /home/jitesh/Desktop/JFPU/src-systemverilog//multiplier_normalizer.sv|/home/jitesh/Desktop/JFPU/src-systemverilog//fp_multiplier.sv|/home/jitesh/Desktop/JFPU/src-systemverilog//addition_normalizer.sv|/home/jitesh/Desktop/JFPU/src-systemverilog//fp_adder.sv|/home/jitesh/Desktop/JFPU/src-systemverilog/fp_divider.sv|
+Z7 !s90 -modelsimini|/home/jitesh/Desktop/JFPU/.hdl_checker/modelsim.ini|-quiet|-work|/home/jitesh/Desktop/JFPU/.hdl_checker/default_library|-sv|-lint|-hazards|-pedanticerrors|-L|default_library|+incdir+/home/jitesh/Desktop/JFPU/src-systemverilog/|+incdir+/home/jitesh/Desktop/JFPU/src-verilog/|/home/jitesh/Desktop/JFPU/src-systemverilog/fp_divider.sv|
+!i113 0
+Z8 o-quiet -work /home/jitesh/Desktop/JFPU/.hdl_checker/default_library -sv -lint -hazards -pedanticerrors -L default_library -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 !s92 -quiet -work /home/jitesh/Desktop/JFPU/.hdl_checker/default_library -sv -lint -hazards -pedanticerrors -L default_library +incdir+/home/jitesh/Desktop/JFPU/src-systemverilog/ +incdir+/home/jitesh/Desktop/JFPU/src-verilog/ -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 tCvgOpt 0
+vaddition_normaliser
+!s105 fp_adder_sv_unit
+DXx4 work 16 fp_adder_sv_unit 0 22 ^eUHaN64XV?20QRRJMaBL0
+R1
+Z11 !s110 1716734366
+!i10b 1
+!s100 T:zcSY7RW3Dm:54M021Yl3
+I2ESi034Xbozg`9Z5`i@Tl3
+S1
+R0
+w1716732476
+8/home/jitesh/Desktop/JFPU/src-verilog//addition_normalizer.sv
+Z12 F/home/jitesh/Desktop/JFPU/src-verilog//addition_normalizer.sv
+!i122 8
+Z13 L0 4 28
+R4
+R5
+r1
+!s85 0
+31
+Z14 !s108 1716734366.000000
+Z15 !s107 /home/jitesh/Desktop/JFPU/src-verilog//addition_normalizer.sv|/home/jitesh/Desktop/JFPU/src-systemverilog/fp_adder.sv|
+Z16 !s90 -modelsimini|/home/jitesh/Desktop/JFPU/.hdl_checker/modelsim.ini|-quiet|-work|/home/jitesh/Desktop/JFPU/.hdl_checker/default_library|-sv|-lint|-hazards|-pedanticerrors|-L|default_library|+incdir+/home/jitesh/Desktop/JFPU/src-verilog/|/home/jitesh/Desktop/JFPU/src-systemverilog/fp_adder.sv|
+!i113 0
+R8
+Z17 !s92 -quiet -work /home/jitesh/Desktop/JFPU/.hdl_checker/default_library -sv -lint -hazards -pedanticerrors -L default_library +incdir+/home/jitesh/Desktop/JFPU/src-verilog/ -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R10
+vaddition_normaliszr
+R1
+!s110 1716734298
+!i10b 1
+!s100 C;aconoJJR[RKZPV3>C9:3
+I>A7L=hkW0M`1cNa?LiYf?0
+S1
+R0
+w1716734298
+8/tmp/tmpenphscp_.sv
+F/tmp/tmpenphscp_.sv
+!i122 4
+R13
+R4
+R5
+r1
+!s85 0
+31
+!s108 1716734298.000000
+!s107 /tmp/tmpenphscp_.sv|
+!s90 -modelsimini|/home/jitesh/Desktop/JFPU/.hdl_checker/modelsim.ini|-quiet|-work|/home/jitesh/Desktop/JFPU/.hdl_checker/default_library|-sv|-lint|-hazards|-pedanticerrors|-L|default_library|/tmp/tmpenphscp_.sv|
+!i113 0
+R8
+R10
+vaddition_normalizer
+R1
+R2
+!i10b 1
+!s100 dbOk<nSXIRElSA33[<o<12
+I[k0CGD2o:;kaQCDcXPA?90
+S1
+R0
+w1716734379
+8/home/jitesh/Desktop/JFPU/src-systemverilog//addition_normalizer.sv
+F/home/jitesh/Desktop/JFPU/src-systemverilog//addition_normalizer.sv
+!i122 10
+R13
+R4
+R5
+r1
+!s85 0
+31
+R6
+Z18 !s107 /home/jitesh/Desktop/JFPU/src-systemverilog//multiplier_normalizer.sv|/home/jitesh/Desktop/JFPU/src-systemverilog//fp_multiplier.sv|/home/jitesh/Desktop/JFPU/src-systemverilog//addition_normalizer.sv|/home/jitesh/Desktop/JFPU/src-systemverilog//fp_adder.sv|/home/jitesh/Desktop/JFPU/src-systemverilog/fp_divider.sv|
+R7
+!i113 0
+R8
+R9
+R10
+Xfp_adder_sv_unit
+R1
+R11
+V^eUHaN64XV?20QRRJMaBL0
+r1
+!s85 0
+!i10b 1
+!s100 [AAG@ni6i9SZg5RC?cLg_0
+I^eUHaN64XV?20QRRJMaBL0
+!i103 1
+S1
+R0
+R3
+8/home/jitesh/Desktop/JFPU/src-systemverilog/fp_adder.sv
+F/home/jitesh/Desktop/JFPU/src-systemverilog/fp_adder.sv
+R12
+!i122 8
+L0 158 0
+R5
+31
+R14
+R15
+R16
+!i113 0
+R8
+R17
+R10
+vmultiplication_normaliser
+R1
+R2
+!i10b 1
+!s100 jg6gOjgGKHI8T>fd02Ol=2
+IMFH4WSP2^[lT9iZUjGA?f2
+Z19 !s105 fp_divider_sv_unit
+S1
+R0
+Z20 w1716732775
+8/home/jitesh/Desktop/JFPU/src-systemverilog//multiplier_normalizer.sv
+F/home/jitesh/Desktop/JFPU/src-systemverilog//multiplier_normalizer.sv
+!i122 10
+L0 2 30
+R4
+R5
+r1
+!s85 0
+31
+R6
+R18
+R7
+!i113 0
+R8
+R9
+R10
+vmultiplier
+R1
+R2
+!i10b 1
+!s100 9;kT_Q@dI>8UULj]lo02P3
+I>KAolkk49B3Z]OGeVKcf?1
+R19
+S1
+R0
+R20
+8/home/jitesh/Desktop/JFPU/src-systemverilog//fp_multiplier.sv
+F/home/jitesh/Desktop/JFPU/src-systemverilog//fp_multiplier.sv
+!i122 10
+L0 3 107
+R4
+R5
+r1
+!s85 0
+31
+R6
+R18
+R7
+!i113 0
+R8
+R9
+R10

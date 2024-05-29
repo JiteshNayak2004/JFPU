@@ -1,4 +1,4 @@
-`include "multiplier_normalizer.sv"
+`include "/home/jitesh/Desktop/JFPU/src-systemverilog/multiplier_normalizer.sv"
 
 module multiplier (a,b,out);
 // port declarations
@@ -41,7 +41,7 @@ assign b_sign=b[31];
 
 
 // intializing multiplier_normalizer
-  multiplication_normaliser norm
+  multiplier_normalizer norm
   (
     .in_e(i_e),
     .in_m(i_m),

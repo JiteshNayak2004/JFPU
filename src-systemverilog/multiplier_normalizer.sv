@@ -1,5 +1,5 @@
 
-module multiplication_normaliser(in_e, in_m, out_e, out_m);
+module multiplier_normalizer(in_e, in_m, out_e, out_m);
 input  logic [7:0] in_e;
 input  logic [47:0] in_m; // as the product of two 24 bit no's is 48 bit wide
 output  logic [7:0] out_e;

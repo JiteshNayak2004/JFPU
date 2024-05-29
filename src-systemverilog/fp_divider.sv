@@ -1,6 +1,6 @@
 
-`include "fp_adder.sv"
-`include "fp_multiplier.sv"
+`include "/home/jitesh/Desktop/JFPU/src-systemverilog/fp_adder.sv"
+`include "/home/jitesh/Desktop/JFPU/src-systemverilog/fp_multiplier.sv"
 
 
 // using newton raphson method for division
