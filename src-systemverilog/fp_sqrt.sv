@@ -5,7 +5,7 @@
 
 
 
-module divider (a,out);
+module fp_sqrt (a,out);
 
 // port declarations
 input logic [31:0]a;
@@ -32,7 +32,7 @@ assign x0=32'h3F5A827A; // value is 0.853553414345
 logic [31:0] x1; 
 logic [31:0] x2;
 logic [31:0] x3; 
-logic [31:0] x3; 
+logic [31:0] x4; 
 
 
 // intermediate var in iterations
@@ -45,42 +45,29 @@ logic [31:0]a2; // iteration 2 addition
 logic [31:0]d3; // iteration 3 division
 logic [31:0]a3; // iteration 3 addition
 
-always_comb begin 
-
-    biased_float=a;
-    biased_float[30:23]=8'b10000101; // making exponent as 126 so mantissa is biases b/w 0.5 to 1
-
-    // calculation of Y now
-
-    // iteration 1
-    divider div1 (X,x0,d1); // calc X/xo
-    adder add1 (x0,d1,a1);
-    multiplier mul1 (value_half,a1,x1); 
 
 
-    // iteration 2
-    divider div2 (X,x1,d2); // calc X/xo
-    adder add2 (x1,d2,a2);
-    multiplier mul2 (value_half,a1,x2); 
-
-
-    // iteration 3
-    divider div3 (X,x2,d3); // calc X/xo
-    adder add3 (x2,a3);
-    multiplier mul3 (value_half,a3,x3); 
-
-    // calculation of X that is Y*C now c happens to be root2
-
-    multiplier m4 (x3,value_root2,x4);
+assign biased_float=a;
+assign biased_float[30:23]=8'b10000101; // making exponent as 126 so mantissa is biases b/w 0.5 to 1
+// calculation of Y now
+// iteration 1
+fp_divider div1 (X,x0,d1); // calc X/xo
+fp_adder add1 (x0,d1,a1);
+fp_multiplier mul1 (value_half,a1,x1); 
+// iteration 2
+fp_divider div2 (X,x1,d2); // calc X/xo
+fp_adder add2 (x1,d2,a2);
+fp_multiplier mul2 (value_half,a1,x2); 
+// iteration 3
+fp_divider div3 (X,x2,d3); // calc X/xo
+fp_adder add3 (x2,a3);
+fp_multiplier mul3 (value_half,a3,x3); 
+// calculation of X that is Y*C now c happens to be root2
+fp_multiplier m4 (x3,value_root2,x4);
 
 
     
 
-
-
-
-    
-end
 
 
 

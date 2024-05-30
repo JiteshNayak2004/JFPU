@@ -1,4 +1,3 @@
-`include "/home/jitesh/Desktop/JFPU/src-systemverilog/addition_normalizer.sv"
 
 module fp_adder (
     a,
@@ -57,7 +56,7 @@ module fp_adder (
   always @(*) begin
     // for ip a
     if (a_exponent == 8'b0) begin
-      a_exponent = 8'h01;
+      a_exponent = 8'h01; // don't get why we doing this have to look on it later
       a_mantissa = {1'b0, a[22:0]};  // storing the implicit bit
     end else begin
       a_exponent = a[30:23];
