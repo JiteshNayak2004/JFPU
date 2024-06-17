@@ -1,3 +1,9 @@
+`include "fp_adder.sv"
+`include "fp_multiplier.sv"
+
+
+
+
 module fp_divider (
     input logic[31:0]a,
     input logic[31:0]b,

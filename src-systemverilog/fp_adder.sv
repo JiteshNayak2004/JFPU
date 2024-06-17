@@ -31,14 +31,13 @@ module fp_adder (
   logic [23:0] tmp_mantissa;
   logic [7:0] tmp_exponent;
 
-  // dummy vars to convert o/p mantissa into 1.Mantissa format using add_normalizer
+  // dummy vars to convert o/p mantissa into 1.Mantissa format using 
   logic [7:0] i_e;
   logic [23:0] i_m;
   logic [7:0] o_e;
   logic [23:0] o_m;
 
   //basic assigning
-
   assign a_sign = a[31];
   assign b_sign = b[31];
   //regs to store normalized o/p mantissa and exponent
@@ -46,10 +45,10 @@ module fp_adder (
   logic[7:0] norm_out_exponent;
   logic[63:0] binary_i; // sformatf returns a 64 bit value
   logic[7:0] binary_eq; // slicing binary_i to contain 8 bits so as to subtract
-
+  int leading_zeros = 0;
   integer i;
 
-   // adding the implicit bit for normalized and denormalized floating point no's
+  // adding the implicit bit for normalized and denormalized floating point no's
   // 0 for denormalized
   // 1 for normalized
 
@@ -125,22 +124,20 @@ module fp_adder (
     end
 
     //checks whether the implicit bit is 0 and exponent non zero this would indicate a non normalized no
-    // if exponent was 0 and the implicit bit 1 then it would be denormalized no in which this is permitted
+    //if exponent was 0 and the implicit bit 1 then it would be denormalized no in which this is permitted
 
-
-    // Find the leading non-zero bit (MSB)
-    for (i = 0; i < 24; i = i + 1) begin
-
-      if (out_mantissa[23 - i] == 1'b1) begin
-        norm_out_mantissa=out_mantissa[23:0] << i;
-        binary_i=$sformatf("%0d", i);
-        binary_eq=binary_i[7:0];
-        norm_out_exponent= out_exponent-binary_eq; // Pack normalized mantissa and adjusted exponent
+    // Find ignore the implicit bit while assigning final op
+    // Count leading zeros for exponent adjustment
+    for (i = 1; i < 24; i = i + 1) begin
+      if (out_mantissa[23 - i] == 1'b0) begin
+        leading_zeros = leading_zeros + 1;
       end
-
     end
 
-    // we ignore the implicit bit while assigning final op
+    // Normalize mantissa (conditional shift)
+    norm_out_mantissa = out_mantissa << (leading_zeros);
+    norm_out_exponent = out_exponent - leading_zeros; // Adjusted exponent
+
     out = {out_sign, out_exponent, out_mantissa[22:0]};
 
   end
